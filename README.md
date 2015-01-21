@@ -1,3 +1,3 @@
-# Boilerplate
+# Drink Machine
 
-Boilerplate for front end projects.
+Pull the lever and see if your lucky enough to get a morning beverage.
