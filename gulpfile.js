@@ -59,6 +59,14 @@ gulp.task('js', function() {
     }));
 });
 
+gulp.task('images', function() {
+  gulp.src(
+    [
+      path.join(__dirname, '/src/images/*.*')
+    ]
+  ).pipe(gulp.dest(path.join(__dirname, 'build/images')));
+});
+
 gulp.task('browser-sync', function() {
   browserSync({
     server: {
