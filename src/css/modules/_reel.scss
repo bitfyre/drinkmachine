@@ -7,8 +7,27 @@
 
 .Reel {
   background-color: grey;
+  background-repeat: repeat-y;
+  background-size: 100%;
   padding: 0;
-  width: 150px;
-  height: 150px;
+  width: 75px;
+  height: 75px;
   margin: 0;
+  display: inline-block;
+
+  & + & {
+    margin-left: 8px;
+  }
+
+  &_method {
+    background-image: url('../images/reel-1.jpg');
+  }
+
+  &_equipment {
+    background-image: url('../images/reel-2.jpg');
+  }
+
+  &_flavoring {
+    background-image: url('../images/reel-3.jpg');
+  }
 }
