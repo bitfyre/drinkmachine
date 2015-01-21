@@ -5,6 +5,16 @@
 *   Styling for individual Reel elements
 *   ========================================================================= */
 
+@keyframes reelSpin {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 0 -450px;
+  }
+}
+
 .Reel {
   background-color: grey;
   background-repeat: repeat-y;
@@ -21,6 +31,7 @@
 
   &_method {
     background-image: url('../images/reel-1.jpg');
+    animation: reelSpin 300ms linear 0s infinite normal;
   }
 
   &_equipment {
