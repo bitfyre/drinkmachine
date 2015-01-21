@@ -1,3 +1,4 @@
+var autoprefixer = require('gulp-autoprefixer');
 var browserSync = require('browser-sync');
 var deploy = require('gulp-gh-pages');
 var gulp = require('gulp');
@@ -38,6 +39,9 @@ gulp.task('css', function() {
         this.emit('end');
       }
     }))
+    .pipe(
+      autoprefixer('last 2 version', '> 1%', 'ie 8', 'ie 9')
+    )
     .pipe(rename({
       extname: ''
     }))
