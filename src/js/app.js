@@ -1,6 +1,6 @@
 var $ = require('jquery');
-var jQueryVersion = require('./lib.js');
+var DrinkMachine = require('./drinkmachine.js');
 
 $(function() {
-  console.log(jQueryVersion());
+  console.log('ready');
 })();
