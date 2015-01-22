@@ -24,6 +24,9 @@
   height: 75px;
   margin: 0;
   display: inline-block;
+  transition: {
+    property: background;
+  }
 
   & + & {
     margin-left: 8px;
@@ -31,17 +34,14 @@
 
   &_method {
     background-image: url('../images/reel-1.jpg');
-    //animation: reelSpin 400ms linear 0s infinite normal;
   }
 
   &_equipment {
     background-image: url('../images/reel-2.jpg');
-    //animation: reelSpin 400ms linear 0s infinite reverse;
   }
 
   &_flavoring {
     background-image: url('../images/reel-3.jpg');
-    //animation: reelSpin 400ms linear 0s infinite normal;
   }
 
   &-spin {
@@ -64,5 +64,15 @@
       delay: 0s;
       direction: reverse;
     }
+  }
+
+  &.is-offest-1 {
+    background-position: 0 -150px;
+    transition-duration: 200ms;
+  }
+
+  &.is-offest-2 {
+    background-position: 0 -300px;
+    transition-duration: 300ms;
   }
 }
