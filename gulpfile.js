@@ -93,3 +93,13 @@ gulp.task('watch',
     gulp.watch(path.join(__dirname, 'src/css/**/*.scss'), ['css']);
     gulp.watch(path.join(__dirname, 'src/js/**/*.js'), ['js']);
 });
+
+gulp.task('build',
+  [
+    'html',
+    'css',
+    'js',
+    'images'
+  ],
+  function() {
+});
