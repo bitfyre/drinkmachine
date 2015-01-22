@@ -10,7 +10,11 @@ var options = {
     'coffee',
     'tea',
     'espresso'
-  ]
+  ],
+  kudos: '.js-kudos',
+  kudosComponent: 'Kudos',
+  appology: '.js-appology',
+  hideClass: 'u-displayNone'
 };
 
 var slotResults = [];
@@ -41,7 +45,8 @@ DrinkMachine.prototype = {
   },
 
   setHasWon: function() {
-    for (var i = 1; i < slotResults.length + 1; i++) {
+    this.hasWon = false;
+    for (var i = 1; i < slotResults.length; i++) {
       if (slotResults[i] != slotResults[i - 1]) {
         this.hasWon = false;
         return false;
@@ -58,20 +63,20 @@ DrinkMachine.prototype = {
   startSpin: function() {
     var drinkMachine = this;
     this.setSlotResults();
+    this.setHasWon();
     $(options.reel + ':nth-of-type(odd)').addClass(options.spin);
     $(options.reel + ':nth-of-type(even)').addClass(options.reverseSpin);
     $(options.playButton).off('click');
     setTimeout(function() {
       drinkMachine.endSpin();
-    }, 5000);
+    }, 2000);
   },
 
   endSpin: function() {
     $(options.reel).removeClass(options.spin + ' ' + options.reverseSpin);
     this.setupButtonHandler();
     this.setOffsets();
-    this.setHasWon();
-    console.log(this.getHasWon());
+    this.renderFeedback()
   },
 
   setupButtonHandler: function() {
@@ -79,6 +84,17 @@ DrinkMachine.prototype = {
     $(options.playButton).on('click', function() {
       drinkMachine.startSpin();
     });
+  },
+
+  renderFeedback: function() {
+    if (this.getHasWon()) {
+      var $kudos = $(options.kudos)
+      $kudos.removeClass(options.hideClass);
+      $kudos.addClass(options.kudosComponent + '-' + slotResults[0]);
+      $(options.playButton).addClass(options.hideClass);
+    } else {
+      $(options.appology).removeClass(options.hideClass);
+    }
   },
 
   reset: function() {
@@ -90,7 +106,9 @@ DrinkMachine.prototype = {
     $(options.reel).each(function() {
       $(this).removeClass(offsetClasses.join(' '));
     });
+    $(options.appology).addClass(options.hideClass);
     if (slotResults.length > 0) {
+      // empty slotResults
       slotResults = [];
     }
   }
