@@ -13,6 +13,7 @@ var options = {
   ],
   kudos: '.js-kudos',
   kudosComponent: 'Kudos',
+  kudosWinnings: '.Kudos-winnings',
   appology: '.js-appology',
   hideClass: 'u-displayNone'
 };
@@ -90,7 +91,8 @@ DrinkMachine.prototype = {
     if (this.getHasWon()) {
       var $kudos = $(options.kudos)
       $kudos.removeClass(options.hideClass);
-      $kudos.addClass(options.kudosComponent + '-' + slotResults[0]);
+      $kudos.child(options.kudosWinningsj)
+        .addClass(options.kudosComponent + '-' + slotResults[0]);
       $(options.playButton).addClass(options.hideClass);
     } else {
       $(options.appology).removeClass(options.hideClass);

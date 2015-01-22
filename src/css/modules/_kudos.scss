@@ -1,0 +1,39 @@
+/*  ============================================================================
+*
+*   Kudos
+*
+*   Styling feedback when user wins a drink
+*   ========================================================================= */
+
+.Kudos {
+  padding-bottom: pxs2ems(24);
+  padding-bottom: pxs2rems(24);
+
+  &-title {
+    @include font-size(18);
+    @include line-height(18, 24);
+  }
+
+  &-winnings {
+    background-position: left top;
+    background-repeat: none;
+    background-size: 100%;
+    width: 150px;
+    height: 150px;
+    border: 2px solid lighten($espresso, 10%);
+    border-radius: 4px;
+    margin: 0 auto;
+  }
+
+  &-coffee {
+    background-image: url('../images/coffeecup.jpg');
+  }
+
+  &-tea {
+    background-image: url('../images/teacup.jpg');
+  }
+
+  &-espresso {
+    background-image: url('../images/espressocup.jpg');
+  }
+}
