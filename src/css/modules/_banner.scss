@@ -6,5 +6,11 @@
 *   ========================================================================= */
 
 .Banner {
+  color: $cream;
+  background-color: $espresso;
   @include clearfix();
+
+  &-title {
+    font-family: $fancy-serif-stack;
+  }
 }
