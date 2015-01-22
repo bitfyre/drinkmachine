@@ -31,14 +31,38 @@
 
   &_method {
     background-image: url('../images/reel-1.jpg');
-    animation: reelSpin 300ms linear 0s infinite normal;
+    //animation: reelSpin 400ms linear 0s infinite normal;
   }
 
   &_equipment {
     background-image: url('../images/reel-2.jpg');
+    //animation: reelSpin 400ms linear 0s infinite reverse;
   }
 
   &_flavoring {
     background-image: url('../images/reel-3.jpg');
+    //animation: reelSpin 400ms linear 0s infinite normal;
+  }
+
+  &-spin {
+    animation: {
+      name: reelSpin;
+      duration: 400ms;
+      iteration-count: 20;
+      timing-function: linear;
+      delay: 0s;
+      direction: normal;
+    }
+  }
+
+  &-reverseSpin {
+    animation: {
+      name: reelSpin;
+      duration: 400ms;
+      iteration-count: 20;
+      timing-function: linear;
+      delay: 0s;
+      direction: reverse;
+    }
   }
 }
