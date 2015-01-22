@@ -83,16 +83,16 @@ DrinkMachine.prototype = {
 
   reset: function() {
     var offsetClasses = [
-      'is-' + slotMappings[0] ,
-      'is-' + slotMappings[1],
-      'is-' + slotMappings[2]
+      'is-' + options.slotMappings[0],
+      'is-' + options.slotMappings[1],
+      'is-' + options.slotMappings[2]
     ]
+    $(options.reel).each(function() {
+      $(this).removeClass(offsetClasses.join(' '));
+    });
     if (slotResults.length > 0) {
       slotResults = [];
     }
-    $().each(function() {
-      $(this).removeClass(offsetClasses.join(' '));
-    });
   }
 };
 
