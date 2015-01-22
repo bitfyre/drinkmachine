@@ -32,7 +32,6 @@ DrinkMachine.prototype = {
       var resultName = options.slotMappings[num - 1];
       slotResults.push(resultName);
     }
-    console.log(slotResults);
   },
 
   getRandomNumber: function() {
@@ -91,7 +90,7 @@ DrinkMachine.prototype = {
     if (this.getHasWon()) {
       var $kudos = $(options.kudos)
       $kudos.removeClass(options.hideClass);
-      $kudos.child(options.kudosWinningsj)
+      $kudos.children(options.kudosWinnings)
         .addClass(options.kudosComponent + '-' + slotResults[0]);
       $(options.playButton).addClass(options.hideClass);
     } else {

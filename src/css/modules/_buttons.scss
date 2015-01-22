@@ -1,0 +1,26 @@
+/*  ============================================================================
+*
+*   Button
+*
+*   Buttons styling
+*   ========================================================================= */
+
+.Button {
+  color: $cream;
+  background-color: $noon-waters;
+  padding: pxs2ems(36) pxs2ems(12);
+  padding: pxs2rems(36) pxs2rems(12);
+  border: 2px solid $cream;
+  border-radius: pxs2ems(120);
+  border-radius: pxs2rems(120);
+  box-shadow: 0 0 0 3px $noon-waters;
+
+  &:hover {
+    background-color: $midnight-waters;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px $midnight-waters;
+  }
+}
