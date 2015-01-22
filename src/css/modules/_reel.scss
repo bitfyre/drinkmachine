@@ -66,13 +66,25 @@
     }
   }
 
-  &.is-offest-1 {
+  &.is-espresso {
     background-position: 0 -150px;
     transition-duration: 200ms;
   }
 
-  &.is-offest-2 {
+  &.is-tea {
     background-position: 0 -300px;
     transition-duration: 300ms;
+  }
+
+  &_equipment {
+    &.is-espresso {
+      background-position: 0 300px;
+      transition-duration: 400ms;
+    }
+
+    &.is-tea {
+      background-position: 0 150px;
+      transition-duration: 200ms;
+    }
   }
 }
